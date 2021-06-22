@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HybrisProjectSettings">
+    <option name="completeSetOfAvailableExtensionsInHybris">
+      <set>
+        <option value="concerttours" />
+      </set>
+    </option>
+    <option name="followSymlink" value="true" />
+    <option name="hybrisDirectory" value="..\..\..\..\..\..\Users\vikto\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\203.7148.57\jbr\bin" />
+    <option name="hybrisProject" value="true" />
+    <option name="ideModulesFilesDirectory" value="$PROJECT_DIR$/idea-module-files" />
+    <option name="importOotbModulesInReadOnlyMode" value="true" />
+    <option name="importedByVersion" value="2001.3" />
+    <option name="javadocUrl" value="" />
+    <option name="unusedExtensions">
+      <set>
+        <option value="concerttours" />
+      </set>
+    </option>
+  </component>
+</project>

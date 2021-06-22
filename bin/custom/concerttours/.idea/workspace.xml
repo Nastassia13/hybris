@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e4f93e5c-338e-475c-9394-f5715f2dc61d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/default_user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/hybris_integration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/hybrisDeveloperSpecificProjectSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/hybrisProjectSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Remote_debug.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idea-module-files/concerttours.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/GeneratedTypeInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/GeneratedTypeInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Attributes$Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Attributes$Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Enumerations$ConcertType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Enumerations$ConcertType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Enumerations$MusicType.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Enumerations$MusicType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Enumerations.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Enumerations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Relations.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants$Relations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/constants/GeneratedConcerttoursConstants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/concerttours/jalo/GeneratedConcerttoursManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/classes/concerttours/jalo/GeneratedConcerttoursManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concerttours.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gensrc/concerttours/GeneratedTypeInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/gensrc/concerttours/GeneratedTypeInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gensrc/concerttours/constants/GeneratedConcerttoursConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/gensrc/concerttours/constants/GeneratedConcerttoursConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gensrc/concerttours/jalo/GeneratedBand.java" beforeDir="false" afterPath="$PROJECT_DIR$/gensrc/concerttours/jalo/GeneratedBand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gensrc/concerttours/jalo/GeneratedBandLeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/gensrc/concerttours/jalo/GeneratedBandLeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gensrc/concerttours/jalo/GeneratedConcerttoursManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/gensrc/concerttours/jalo/GeneratedConcerttoursManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/concerttours-items.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/concerttours-items.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../data/build.number" beforeDir="false" afterPath="$PROJECT_DIR$/../../../data/build.number" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../data/hsqldb/mydb.lck" beforeDir="false" afterPath="$PROJECT_DIR$/../../../data/hsqldb/mydb.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../data/hsqldb/mydb.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../data/hsqldb/mydb.log" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="[y] Custom" pattern="file[group:Custom]:*//*" />
+    <scope name="[y] Custom Type System Files" pattern="file[group:Custom]:*//*-items.xml" />
+    <scope name="[y] Custom Type System, Beans and Impex files" pattern="file[group:Custom]:*//*-items.xml||file[group:Custom]:*//*-beans.xml||file[group:Custom]:*//*.impex" />
+    <scope name="[y] All Type System Files" pattern="file:*//*-items.xml" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1uIZasDkqUPMJEm8XC6OGKtwBxw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringGeneralSettings">
+    <option name="showMultipleContextsPanel" value="false" />
+    <option name="showProfilesPanel" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e4f93e5c-338e-475c-9394-f5715f2dc61d" name="Default Changelist" comment="" />
+      <created>1624355131783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624355131783</updated>
+      <workItem from="1624355136504" duration="152000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
