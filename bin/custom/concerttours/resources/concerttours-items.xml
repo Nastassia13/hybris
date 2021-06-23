@@ -17,7 +17,8 @@
        xsi:noNamespaceSchemaLocation="items.xsd">
 
     <collectiontypes>
-        <collectiontype code="ConcertCollection" elementtype="Product" autocreate="true" generate="true"/>
+        <collectiontype code="AuthorCollection" elementtype="java.lang.String" autocreate="true" generate="true"/>
+        <collectiontype code="ConcertCollection" elementtype="Concert" autocreate="true" generate="true"/>
     </collectiontypes>
 
     <enumtypes>
@@ -32,6 +33,8 @@
 
     <maptypes>
         <maptype code="BandMap" argumenttype="java.lang.String" returntype="Band" autocreate="true" generate="true"/>
+        <maptype code="SingersMap" argumenttype="java.lang.String" returntype="java.lang.String" autocreate="true"
+                 generate="true"/>
     </maptypes>
 
     <relations>
@@ -50,6 +53,16 @@
                 <modifiers read="true" write="true" search="true" optional="true"/>
             </sourceElement>
             <targetElement qualifier="band" type="Band" cardinality="many">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </targetElement>
+        </relation>
+
+        <relation code="Song2Concert" autocreate="true" generate="false" localized="false">
+            <deployment table="Song2Concert" typecode="30281"/>
+            <sourceElement qualifier="songs" type="Song" collectiontype="set" cardinality="many" ordered="false">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </sourceElement>
+            <targetElement qualifier="concerts" type="Concert" cardinality="many">
                 <modifiers read="true" write="true" search="true" optional="true"/>
             </targetElement>
         </relation>
@@ -96,7 +109,7 @@
                     <description>official global album sales</description>
                     <persistence type="property"/>
                 </attribute>
-                <attribute autocreate="true" qualifier="userprofile" type="BandLeader">
+                <attribute autocreate="true" qualifier="bandLeader" type="BandLeader">
                     <modifiers read="true" write="true" partof="true"/>
                     <description>leader of the group</description>
                     <persistence type="property"/>
@@ -105,7 +118,7 @@
         </itemtype>
 
         <itemtype generate="true" code="BandLeader" autocreate="true">
-            <deployment table="BandLeader" typecode="30269"/>
+            <deployment table="BandLeaders" typecode="30280"/>
             <attributes>
                 <attribute qualifier="code" type="java.lang.String">
                     <description>short unique code of leader</description>
@@ -117,6 +130,32 @@
                 </attribute>
                 <attribute qualifier="birthday" type="java.lang.Integer">
                     <description>birthday</description>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
+        <itemtype generate="true" code="Song" autocreate="true">
+            <deployment table="Songs" typecode="30273"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <description>short unique code of song</description>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="band" type="Band">
+                    <description>band</description>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="musicType" type="MusicType">
+                    <description>music type</description>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="authors" type="AuthorCollection">
+                    <description>authors</description>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="singers" type="SingersMap">
+                    <description>singers</description>
                     <persistence type="property"/>
                 </attribute>
             </attributes>

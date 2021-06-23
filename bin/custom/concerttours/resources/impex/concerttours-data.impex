@@ -1,0 +1,37 @@
+$productCatalog=concertoursProductCatalog
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
+
+INSERT_UPDATE Band;code[unique=true];name
+;band1;Band1
+;band2;Band2
+;band3;Band3
+
+INSERT_UPDATE MusicType;code[unique=true]
+;rock
+;pop
+;classical
+;disco
+;jazz
+
+INSERT_UPDATE Catalog;id[unique=true]
+;$productCatalog
+
+INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];active;languages(isoCode);readPrincipals(uid)
+;$productCatalog;Online;true;en;employeegroup
+
+INSERT_UPDATE Product;code[unique=true];name;band(code);$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
+;201701;The Grand Little x Tour;band1;;x;y;pieces;;Concert
+
+INSERT_UPDATE Concert;code[unique=true];venue;date[dateformat=dd.MM.yyyy];concertType(code);baseProduct(code);$catalogVersion;$approved
+;concert1;Minsk;03.06.2021;openair;201701;
+;concert2;Grodno;15.09.2021;indoor;201701;
+;concert3;Minsk;25.02.2021;indoor;201701;
+;concert4;Brest;12.05.2021;openair;201701;
+
+INSERT_UPDATE Song;code[unique=true];band(code);concerts(code);musicType(code);authors;singers(key,value)
+;song1;band1;concert1,concert2;rock;author1,author2;singer1->SingerName1|singer2->SingerName2
+;song2;band2;concert2,concert3;pop;author1;singer3->SingerName3|singer4->SingerName4|singer5->SingerName5
+;song3;band1;concert1,concert2,concert3;classical;author3,author4;singer2->SingerName2|singer3->SingerName3|singer5->SingerName5

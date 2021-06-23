@@ -2,4 +2,10 @@
 /temp
 /bin/*
 !/bin/custom
+/bin/custom/*
+!/bin/custom/concerttours
+!/bin/custom/myextension
 /roles
+/data
+/idea-module-files
+/.idea

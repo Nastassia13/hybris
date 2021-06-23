@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 22.06.2021 18:09:49                         ---
+ * --- Generated at 24.06.2021 22:13:35                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -42,8 +42,8 @@ public abstract class GeneratedBand extends GenericItem
 	public static final String HISTORY = "history";
 	/** Qualifier of the <code>Band.albumSales</code> attribute **/
 	public static final String ALBUMSALES = "albumSales";
-	/** Qualifier of the <code>Band.userprofile</code> attribute **/
-	public static final String USERPROFILE = "userprofile";
+	/** Qualifier of the <code>Band.bandLeader</code> attribute **/
+	public static final String BANDLEADER = "bandLeader";
 	/** Qualifier of the <code>Band.types</code> attribute **/
 	public static final String TYPES = "types";
 	/** Qualifier of the <code>Band.tours</code> attribute **/
@@ -73,7 +73,7 @@ public abstract class GeneratedBand extends GenericItem
 		tmp.put(NAME, AttributeMode.INITIAL);
 		tmp.put(HISTORY, AttributeMode.INITIAL);
 		tmp.put(ALBUMSALES, AttributeMode.INITIAL);
-		tmp.put(USERPROFILE, AttributeMode.INITIAL);
+		tmp.put(BANDLEADER, AttributeMode.INITIAL);
 		tmp.put(TYPES, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
@@ -154,6 +154,55 @@ public abstract class GeneratedBand extends GenericItem
 	public void setAlbumSales(final long value)
 	{
 		setAlbumSales( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Band.bandLeader</code> attribute.
+	 * @return the bandLeader - leader of the group
+	 */
+	public BandLeader getBandLeader(final SessionContext ctx)
+	{
+		return (BandLeader)getProperty( ctx, BANDLEADER);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Band.bandLeader</code> attribute.
+	 * @return the bandLeader - leader of the group
+	 */
+	public BandLeader getBandLeader()
+	{
+		return getBandLeader( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Band.bandLeader</code> attribute. 
+	 * @param value the bandLeader - leader of the group
+	 */
+	public void setBandLeader(final SessionContext ctx, final BandLeader value)
+	{
+		new PartOfHandler<BandLeader>()
+		{
+			@Override
+			protected BandLeader doGetValue(final SessionContext ctx)
+			{
+				return getBandLeader( ctx );
+			}
+			@Override
+			protected void doSetValue(final SessionContext ctx, final BandLeader _value)
+			{
+				final BandLeader value = _value;
+				setProperty(ctx, BANDLEADER,value);
+			}
+		}.setValue( ctx, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Band.bandLeader</code> attribute. 
+	 * @param value the bandLeader - leader of the group
+	 */
+	public void setBandLeader(final BandLeader value)
+	{
+		setBandLeader( getSession().getSessionContext(), value );
 	}
 	
 	/**
@@ -440,55 +489,6 @@ public abstract class GeneratedBand extends GenericItem
 	public void setTypes(final EnumerationValue value)
 	{
 		setTypes( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Band.userprofile</code> attribute.
-	 * @return the userprofile - leader of the group
-	 */
-	public BandLeader getUserprofile(final SessionContext ctx)
-	{
-		return (BandLeader)getProperty( ctx, USERPROFILE);
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Band.userprofile</code> attribute.
-	 * @return the userprofile - leader of the group
-	 */
-	public BandLeader getUserprofile()
-	{
-		return getUserprofile( getSession().getSessionContext() );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Band.userprofile</code> attribute. 
-	 * @param value the userprofile - leader of the group
-	 */
-	public void setUserprofile(final SessionContext ctx, final BandLeader value)
-	{
-		new PartOfHandler<BandLeader>()
-		{
-			@Override
-			protected BandLeader doGetValue(final SessionContext ctx)
-			{
-				return getUserprofile( ctx );
-			}
-			@Override
-			protected void doSetValue(final SessionContext ctx, final BandLeader _value)
-			{
-				final BandLeader value = _value;
-				setProperty(ctx, USERPROFILE,value);
-			}
-		}.setValue( ctx, value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Band.userprofile</code> attribute. 
-	 * @param value the userprofile - leader of the group
-	 */
-	public void setUserprofile(final BandLeader value)
-	{
-		setUserprofile( getSession().getSessionContext(), value );
 	}
 	
 }

@@ -76,6 +76,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"Song",
+			"GenericItem",
+			concerttours.jalo.Song.class,
+			"de.hybris.platform.persistence.concerttours_Song",
+			false,
+			null,
+			false
+		);
+	
 		createRelationType(
 			"Band2MusicType",
 			null,
@@ -85,6 +95,12 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		createRelationType(
 			"Product2Band",
 			"de.hybris.platform.persistence.link.concerttours_Product2Band",
+			false
+		);
+	
+		createRelationType(
+			"Song2Concert",
+			"de.hybris.platform.persistence.link.concerttours_Song2Concert",
 			false
 		);
 	
@@ -99,8 +115,14 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createCollectionType(
+			"AuthorCollection",
+			"java.lang.String",
+			CollectionType.COLLECTION
+		);
+	
+		createCollectionType(
 			"ConcertCollection",
-			"Product",
+			"Concert",
 			CollectionType.COLLECTION
 		);
 	
@@ -108,6 +130,12 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			"BandMap",
 			"java.lang.String",
 			"Band"
+		);
+	
+		createMapType(
+			"SingersMap",
+			"java.lang.String",
+			"java.lang.String"
 		);
 	
 	}
@@ -139,13 +167,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_Band_albumSales();
 			
-				single_createattr_Band_userprofile();
+				single_createattr_Band_bandLeader();
 			
 				single_createattr_BandLeader_code();
 			
 				single_createattr_BandLeader_name();
 			
 				single_createattr_BandLeader_birthday();
+			
+				single_createattr_Song_code();
+			
+				single_createattr_Song_band();
+			
+				single_createattr_Song_musicType();
+			
+				single_createattr_Song_authors();
+			
+				single_createattr_Song_singers();
 			
 		createRelationAttributes(
 			"Band2MusicType", 
@@ -180,6 +218,26 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			CollectionType.SET,
 			"band", 
 			"Band", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			true,
+			false,
+			CollectionType.COLLECTION
+		);
+	
+		createRelationAttributes(
+			"Song2Concert", 
+			false, 
+
+			"songs", 
+			"Song", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			true,
+			false,
+			CollectionType.SET,
+			"concerts", 
+			"Concert", 
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
@@ -323,14 +381,14 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
-	public void single_createattr_Band_userprofile() throws JaloBusinessException
+	public void single_createattr_Band_bandLeader() throws JaloBusinessException
 	{
 		
 						Map sqlColumnDefinitions = null;
 					
 				createPropertyAttribute(
 					"Band", 
-					"userprofile",  
+					"bandLeader",  
 					null,
 					"BandLeader",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.PARTOF_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
@@ -391,6 +449,91 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_Song_code() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Song", 
+					"code",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Song_band() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Song", 
+					"band",  
+					null,
+					"Band",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Song_musicType() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Song", 
+					"musicType",  
+					null,
+					"MusicType",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Song_authors() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Song", 
+					"authors",  
+					null,
+					"AuthorCollection",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Song_singers() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Song", 
+					"singers",  
+					null,
+					"SingersMap",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -424,9 +567,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 		single_setRelAttributeProperties_Product2Band_source();
 	
+		single_setRelAttributeProperties_Song2Concert_source();
+	
 		single_setRelAttributeProperties_Band2MusicType_target();
 	
 		single_setRelAttributeProperties_Product2Band_target();
+	
+		single_setRelAttributeProperties_Song2Concert_target();
 	
 		connectRelation(
 			"Band2MusicType", 
@@ -452,6 +599,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			"band", 
 			"Band", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			true,
+			false
+		);
+	
+		connectRelation(
+			"Song2Concert", 
+			false, 
+			"songs", 
+			"Song", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			"concerts", 
+			"Concert", 
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
@@ -500,7 +662,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		
 			single_setAttributeProperties_Band_albumSales();
 		
-			single_setAttributeProperties_Band_userprofile();
+			single_setAttributeProperties_Band_bandLeader();
 		
 				{
 				Map customPropsMap = new HashMap();
@@ -521,6 +683,36 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		
 			single_setAttributeProperties_BandLeader_birthday();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"Song",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Song_code();
+		
+			single_setAttributeProperties_Song_band();
+		
+			single_setAttributeProperties_Song_musicType();
+		
+			single_setAttributeProperties_Song_authors();
+		
+			single_setAttributeProperties_Song_singers();
+		
+				setDefaultProperties(
+					"AuthorCollection",
+					true,
+					true,
+					null
+				);
+			
 				setDefaultProperties(
 					"ConcertCollection",
 					true,
@@ -530,6 +722,13 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				setDefaultProperties(
 					"BandMap",
+					true,
+					true,
+					null
+				);
+			
+				setDefaultProperties(
+					"SingersMap",
 					true,
 					true,
 					null
@@ -729,7 +928,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
-						public void single_setAttributeProperties_Band_userprofile() throws JaloBusinessException
+						public void single_setAttributeProperties_Band_bandLeader() throws JaloBusinessException
 						{
 							
 							
@@ -738,7 +937,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							
 							setAttributeProperties(
 								"Band", 
-								"userprofile",
+								"bandLeader",
 								false, 
 								null,
 								null,
@@ -805,6 +1004,116 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"BandLeader", 
 								"birthday",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Song_code() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Song", 
+								"code",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Song_band() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Song", 
+								"band",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Song_musicType() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Song", 
+								"musicType",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Song_authors() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Song", 
+								"authors",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Song_singers() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Song", 
+								"singers",
 								false, 
 								null,
 								null,
@@ -889,6 +1198,48 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 									setAttributeProperties(
 										"Product", 
 										"band",
+										false, 
+										null,
+										null,
+										null,
+										true,
+										false,
+										null,
+										customPropsMap,
+										null
+									);
+								}
+							
+								public void single_setRelAttributeProperties_Song2Concert_source() throws JaloBusinessException
+								{
+									
+									Map customPropsMap = new HashMap();
+									
+
+									setAttributeProperties(
+										"Concert", 
+										"songs",
+										false, 
+										null,
+										null,
+										null,
+										true,
+										false,
+										null,
+										customPropsMap,
+										null
+									);
+								}
+							
+								public void single_setRelAttributeProperties_Song2Concert_target() throws JaloBusinessException
+								{
+									
+									Map customPropsMap = new HashMap();
+									
+
+									setAttributeProperties(
+										"Song", 
+										"concerts",
 										false, 
 										null,
 										null,
