@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 24.06.2021 22:13:35                         ---
+ * --- Generated at 25.06.2021 2:26:32                          ---
  * ----------------------------------------------------------------
  */
 package concerttours.constants;
@@ -32,6 +32,7 @@ public class GeneratedConcerttoursConstants
 		public static class Product
 		{
 			public static final String BAND = "band".intern();
+			public static final String HASHTAG = "hashtag".intern();
 		}
 	}
 	public static class Enumerations

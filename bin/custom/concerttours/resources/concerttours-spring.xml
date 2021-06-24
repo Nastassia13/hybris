@@ -93,4 +93,7 @@
     <bean id="concertDaysUntilAttributeHandler"
           class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
 
+    <bean id="concerttoursCustomSetup" class="concerttours.setup.ConcerttoursCustomSetup">
+        <property name="importService" ref="importService"/>
+    </bean>
 </beans>
