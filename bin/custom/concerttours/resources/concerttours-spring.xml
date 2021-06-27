@@ -101,4 +101,16 @@
     </bean>
 
     <bean id="bandDao" class="concerttours.daos.impl.DefaultBandDao" parent="abstractItemDao"/>
+
+    <bean id="bandService" class="concerttours.service.impl.DefaultBandService">
+        <property name="bandDao" ref="bandDao"/>
+    </bean>
+
+    <bean id="bandFacade" class="concerttours.facades.impl.DefaultBandFacade">
+        <property name="bandService" ref="bandService"/>
+    </bean>
+
+    <bean id="tourFacade" class="concerttours.facades.impl.DefaultTourFacade">
+        <property name="productService" ref="productService"/>
+    </bean>
 </beans>

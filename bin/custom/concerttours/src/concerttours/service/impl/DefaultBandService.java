@@ -5,23 +5,23 @@ import concerttours.model.BandModel;
 import concerttours.service.BandService;
 import de.hybris.platform.servicelayer.exceptions.AmbiguousIdentifierException;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Required;
 
-import javax.annotation.Resource;
 import java.util.List;
 
-@Service
 public class DefaultBandService implements BandService {
-    @Resource
     private BandDao bandDao;
 
     @Override
-    public List<BandModel> findBands() {
+    public List<BandModel> getBands() {
         return bandDao.findBands();
     }
 
     @Override
-    public BandModel findBandForCode(String code) {
+    public BandModel getBandForCode(String code) {
+        if (code == null) {
+            throw new IllegalArgumentException("Band code cannot be null");
+        }
         List<BandModel> result = bandDao.findBandsByCode(code);
         if (result.isEmpty()) {
             throw new UnknownIdentifierException("Band with code '" + code + "' not found!");
@@ -29,5 +29,10 @@ public class DefaultBandService implements BandService {
             throw new AmbiguousIdentifierException("Band code '" + code + "' is not unique, " + result.size() + " bands found!");
         }
         return result.get(0);
+    }
+
+    @Required
+    public void setBandDao(BandDao bandDao) {
+        this.bandDao = bandDao;
     }
 }

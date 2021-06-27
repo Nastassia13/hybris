@@ -2,10 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Bands</title>
+    <title>Tour</title>
 </head>
 <body>
-<h1>Bands</h1>
+<h1>Tour</h1>
+Id: ${tour.id} <br>
+Name: ${tour.tourName} <br>
+Description: ${tour.description} <br>
+Concerts:
 <table>
     <thead>
     <tr>
@@ -13,36 +17,30 @@
             Id
         </th>
         <th>
-            Name
+            Date
         </th>
         <th>
-            Albums sold
+            Venue
         </th>
         <th>
-            Description
-        </th>
-        <th>
-            Music type
+            Type
         </th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="band" items="${bands}">
+    <c:forEach var="concert" items="${tour.concerts}">
         <tr>
             <td>
-                    ${band.id}
+                    ${concert.id}
             </td>
             <td>
-                    ${band.name}
+                    ${concert.date}
             </td>
             <td>
-                    ${band.albumsSold}
+                    ${concert.venue}
             </td>
             <td>
-                    ${band.description}
-            </td>
-            <td>
-                    ${band.genres}
+                    ${concert.type}
             </td>
         </tr>
     </c:forEach>
