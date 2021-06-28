@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 28.06.2021 0:20:11                          ---
+ * --- Generated at 28.06.2021 21:57:39                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -10,6 +10,7 @@ import concerttours.constants.ConcerttoursConstants;
 import concerttours.jalo.Band;
 import concerttours.jalo.BandLeader;
 import concerttours.jalo.Concert;
+import concerttours.jalo.News;
 import concerttours.jalo.Song;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
@@ -352,6 +353,32 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	public Concert createConcert(final Map attributeValues)
 	{
 		return createConcert( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public News createNews(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.NEWS );
+			return (News)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating News : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public News createNews(final Map attributeValues)
+	{
+		return createNews( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public Song createSong(final SessionContext ctx, final Map attributeValues)
