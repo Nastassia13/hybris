@@ -35,6 +35,7 @@ public class ConcerttoursCustomSetup {
     public boolean addMyProjectData() {
         LOG.info("Starting custom project data loading for the Concerttours extension");
         impexImport("/impex/concerttours-bands.impex");
+        impexImport("/impex/concerttours-tokens.impex");
         impexImport("/impex/concerttours-bands-en.impex");
         impexImport("/impex/concerttours-bands-de.impex");
         impexImport("/impex/concerttours-data.impex");

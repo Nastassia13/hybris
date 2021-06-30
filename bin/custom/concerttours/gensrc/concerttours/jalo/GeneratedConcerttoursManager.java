@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 28.06.2021 21:57:39                         ---
+ * --- Generated at 30.06.2021 12:51:32                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -10,6 +10,7 @@ import concerttours.constants.ConcerttoursConstants;
 import concerttours.jalo.Band;
 import concerttours.jalo.BandLeader;
 import concerttours.jalo.Concert;
+import concerttours.jalo.DateToken;
 import concerttours.jalo.News;
 import concerttours.jalo.Song;
 import de.hybris.platform.jalo.GenericItem;
@@ -353,6 +354,32 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	public Concert createConcert(final Map attributeValues)
 	{
 		return createConcert( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public DateToken createDateToken(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.DATETOKEN );
+			return (DateToken)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating DateToken : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public DateToken createDateToken(final Map attributeValues)
+	{
+		return createDateToken( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public News createNews(final SessionContext ctx, final Map attributeValues)

@@ -96,6 +96,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"DateToken",
+			"GenericItem",
+			concerttours.jalo.DateToken.class,
+			"de.hybris.platform.persistence.concerttours_DateToken",
+			false,
+			null,
+			false
+		);
+	
 		createRelationType(
 			"Band2MusicType",
 			null,
@@ -202,6 +212,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_News_headline();
 			
 				single_createattr_News_content();
+			
+				single_createattr_DateToken_token();
 			
 		createRelationAttributes(
 			"Band2MusicType", 
@@ -620,6 +632,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_DateToken_token() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"DateToken", 
+					"token",  
+					null,
+					"java.util.Date",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -822,6 +851,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_News_headline();
 		
 			single_setAttributeProperties_News_content();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"DateToken",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_DateToken_token();
 		
 				setDefaultProperties(
 					"AuthorCollection",
@@ -1319,6 +1363,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"News", 
 								"content",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_DateToken_token() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"DateToken", 
+								"token",
 								false, 
 								null,
 								null,

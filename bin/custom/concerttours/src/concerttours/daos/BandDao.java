@@ -1,7 +1,6 @@
 package concerttours.daos;
 
 import concerttours.model.BandModel;
-import de.hybris.platform.servicelayer.internal.dao.Dao;
 
 import java.util.List;
 

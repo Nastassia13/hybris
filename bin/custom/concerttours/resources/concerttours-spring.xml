@@ -118,14 +118,25 @@
         <property name="modelService" ref="modelService"/>
     </bean>
 
-    <bean id="bandAlbumSalesInterceptor" class="concerttours.interceptors.BandAlbumSalesInterceptor" />
+    <bean id="bandAlbumSalesInterceptor" class="concerttours.interceptors.BandAlbumSalesInterceptor"/>
 
     <bean id="bandInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
-        <property name="interceptor" ref="bandAlbumSalesInterceptor" />
-        <property name="typeCode" value="Band" />
+        <property name="interceptor" ref="bandAlbumSalesInterceptor"/>
+        <property name="typeCode" value="Band"/>
     </bean>
 
-    <bean id="bandAlbumSalesEventListener" class="concerttours.events.BandAlbumSalesEventListener" parent="abstractEventListener" >
-        <property name="modelService" ref="modelService" />
+    <bean id="bandAlbumSalesEventListener" class="concerttours.events.BandAlbumSalesEventListener"
+          parent="abstractEventListener">
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+    <bean id="dateTokenDao" class="concerttours.daos.impl.DefaultDateTokenDao" parent="abstractItemDao"/>
+
+    <bean id="dateTokenService" class="concerttours.service.impl.DefaultDateTokenService">
+        <property name="dateTokenDao" ref="dateTokenDao"/>
+    </bean>
+
+    <bean id="generateNewFieldJob" class="concerttours.jobs.GenerateNewFieldJob" parent="abstractJobPerformable">
+        <property name="dateTokenService" ref="dateTokenService"/>
     </bean>
 </beans>
