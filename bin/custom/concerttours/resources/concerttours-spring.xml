@@ -108,6 +108,8 @@
 
     <bean id="bandFacade" class="concerttours.facades.impl.DefaultBandFacade">
         <property name="bandService" ref="bandService"/>
+        <property name="mediaService" ref="mediaService"/>
+        <property name="configService" ref="configurationService"/>
     </bean>
 
     <bean id="tourFacade" class="concerttours.facades.impl.DefaultTourFacade">
