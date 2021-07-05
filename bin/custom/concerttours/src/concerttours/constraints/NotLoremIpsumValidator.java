@@ -10,6 +10,6 @@ public class NotLoremIpsumValidator implements ConstraintValidator<NotLoremIpsum
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return value != null && !value.isEmpty() && !value.toLowerCase().startsWith("lorem ipsum");
+        return value == null || !value.isEmpty() && !value.toLowerCase().startsWith("lorem ipsum");
     }
 }
