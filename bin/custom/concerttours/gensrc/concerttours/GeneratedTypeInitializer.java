@@ -106,6 +106,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			false
 		);
 	
+		createItemType(
+			"NotLoremIpsumConstraint",
+			"AttributeConstraint",
+			concerttours.jalo.NotLoremIpsumConstraint.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
 		createRelationType(
 			"Band2MusicType",
 			null,
@@ -277,6 +287,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			CollectionType.COLLECTION
 		);
 	
+				single_createattr_NotLoremIpsumConstraint_annotation();
+			
 
 	}
 
@@ -389,7 +401,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"name",  
 					null,
 					"java.lang.String",
-					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
 				);
@@ -668,6 +680,18 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_NotLoremIpsumConstraint_annotation() throws JaloBusinessException
+	{
+		
+				redeclareAttribute(
+					"NotLoremIpsumConstraint", 
+					"annotation",
+					"java.lang.Class",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.INITIAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG
+				);
+			
+	}
+	
 
 
 	/**
@@ -888,6 +912,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 			single_setAttributeProperties_DateToken_token();
 		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"NotLoremIpsumConstraint",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_NotLoremIpsumConstraint_annotation();
+		
 				setDefaultProperties(
 					"AuthorCollection",
 					true,
@@ -1076,7 +1115,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"Band", 
 								"name",
-								false, 
+								true, 
 								null,
 								null,
 								null,
@@ -1431,6 +1470,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								false, 
 								null,
 								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_NotLoremIpsumConstraint_annotation() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"NotLoremIpsumConstraint", 
+								"annotation",
+								false, 
+								concerttours.constraints.NotLoremIpsum.class,
+								"concerttours.constraints.NotLoremIpsum.class",
 								null,
 								true,
 								true,
