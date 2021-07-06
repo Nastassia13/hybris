@@ -9,3 +9,4 @@
 /data
 /idea-module-files
 /.idea
+*.class
