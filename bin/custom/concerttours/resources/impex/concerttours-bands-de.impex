@@ -1,10 +1,10 @@
 $lang=de
 
 INSERT_UPDATE Band;code[unique=true];history[lang=$lang]
-;A001;Gelegentliche Tribut-Rock-Band bestehend aus F?hrungskr?ften eines f?hrenden Commerce-Software-Anbieters
-;A006;Die niederl?ndische Tribut-Rock-Band, die im Jahr 2013 mit klassischen Rock-Melodien aus den sechziger, siebziger und achtziger Jahren gegr?ndet wurde
+;A001;Gelegentliche Tribut-Rock-Band bestehend aus Führungskräften eines führenden Commerce-Software-Anbieters
+;A006;Die niederländische Tribut-Rock-Band, die im Jahr 2013 mit klassischen Rock-Melodien aus den sechziger, siebziger und achtziger Jahren gegründet wurde
 ;A003;Experimental Jazz Gruppe aus London, die viele musikalische Notizen zusammen in unerwarteten Kombinationen und Sequenzen spielt
-;A004;Verj?ngte polnische Jungenband aus den 1990er Jahren - dieses Genre der Popmusik am zweifelhaftesten am besten
-;A002;A cappella singing group mit Sitz in M?nchen; Eine erhebende Mischung aus traditionellen und zeitgen?ssischen Liedern
-;A005;Enthusiastischer, l?rmender Gospelchor singt traditionelle Gospel-Songs aus dem tiefen S?den
-;A007;Englisch Choralgesellschaft, spezialisiert auf wundersch?n arrangierte, beruhigende Melodien und Lieder
+;A004;Verjüngte polnische Jungenband aus den 1990er Jahren - dieses Genre der Popmusik am zweifelhaftesten am besten
+;A002;A cappella singing group mit Sitz in München; Eine erhebende Mischung aus traditionellen und zeitgenössischen Liedern
+;A005;Enthusiastischer, lärmender Gospelchor singt traditionelle Gospel-Songs aus dem tiefen Süden
+;A007;Englisch Choralgesellschaft, spezialisiert auf wunderschön arrangierte, beruhigende Melodien und Lieder
