@@ -1,0 +1,4 @@
+INSERT_UPDATE Producer;code[unique=true];name;concerts(code)
+;prod1;Lily Jones;concert1,concert4
+;prod2;Jane Brown;concert3
+;prod3;James Smith;concert2

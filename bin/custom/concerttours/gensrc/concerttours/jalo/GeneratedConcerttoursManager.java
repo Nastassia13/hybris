@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 08.07.2021 10:57:33                         ---
+ * --- Generated at 08.07.2021 17:02:55                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -13,6 +13,7 @@ import concerttours.jalo.Concert;
 import concerttours.jalo.DateToken;
 import concerttours.jalo.News;
 import concerttours.jalo.NotLoremIpsumConstraint;
+import concerttours.jalo.Producer;
 import concerttours.jalo.Song;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
@@ -433,6 +434,32 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final Map attributeValues)
 	{
 		return createNotLoremIpsumConstraint( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public Producer createProducer(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.PRODUCER );
+			return (Producer)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating Producer : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public Producer createProducer(final Map attributeValues)
+	{
+		return createProducer( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public Song createSong(final SessionContext ctx, final Map attributeValues)

@@ -66,6 +66,15 @@
                 <modifiers read="true" write="true" search="true" optional="true"/>
             </targetElement>
         </relation>
+
+        <relation code="Concert2Producer" autocreate="true" generate="false" localized="false">
+            <sourceElement qualifier="concerts" type="Concert" collectiontype="set" cardinality="many" ordered="false">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </sourceElement>
+            <targetElement qualifier="producer" type="Producer" cardinality="one">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </targetElement>
+        </relation>
     </relations>
 
     <itemtypes>
@@ -82,6 +91,7 @@
                 <attribute qualifier="venue" type="java.lang.String">
                     <description>venue of concert</description>
                     <persistence type="property"/>
+                    <modifiers unique="true"/>
                 </attribute>
                 <attribute qualifier="date" type="java.util.Date">
                     <description>date of concert</description>
@@ -104,6 +114,7 @@
                 <attribute qualifier="code" type="java.lang.String">
                     <description>short unique code of band</description>
                     <persistence type="property"/>
+                    <modifiers unique="true"/>
                 </attribute>
                 <attribute qualifier="name" type="java.lang.String">
                     <description>name of band</description>
@@ -130,12 +141,28 @@
             </attributes>
         </itemtype>
 
+        <itemtype generate="true" code="Producer" autocreate="true">
+            <deployment table="Producer" typecode="30287"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <description>short unique code of producer</description>
+                    <persistence type="property"/>
+                    <modifiers unique="true"/>
+                </attribute>
+                <attribute qualifier="name" type="java.lang.String">
+                    <description>name of producer</description>
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
         <itemtype generate="true" code="BandLeader" autocreate="true">
             <deployment table="BandLeaders" typecode="30280"/>
             <attributes>
                 <attribute qualifier="code" type="java.lang.String">
                     <description>short unique code of leader</description>
                     <persistence type="property"/>
+                    <modifiers unique="true"/>
                 </attribute>
                 <attribute qualifier="name" type="java.lang.String">
                     <description>name of band leader</description>
@@ -154,6 +181,7 @@
                 <attribute qualifier="code" type="java.lang.String">
                     <description>short unique code of song</description>
                     <persistence type="property"/>
+                    <modifiers unique="true"/>
                 </attribute>
                 <attribute qualifier="band" type="Band">
                     <description>band</description>

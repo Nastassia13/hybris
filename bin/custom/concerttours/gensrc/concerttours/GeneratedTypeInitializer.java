@@ -67,6 +67,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		);
 	
 		createItemType(
+			"Producer",
+			"GenericItem",
+			concerttours.jalo.Producer.class,
+			"de.hybris.platform.persistence.concerttours_Producer",
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
 			"BandLeader",
 			"GenericItem",
 			concerttours.jalo.BandLeader.class,
@@ -132,6 +142,12 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			"Song2Concert",
 			"de.hybris.platform.persistence.link.concerttours_Song2Concert",
 			false
+		);
+	
+		createRelationType(
+			"Concert2Producer",
+			null,
+			true
 		);
 	
 		createEnumerationType(
@@ -202,6 +218,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				single_createattr_Band_bandLeader();
 			
 				single_createattr_Band_image();
+			
+				single_createattr_Producer_code();
+			
+				single_createattr_Producer_name();
 			
 				single_createattr_BandLeader_code();
 			
@@ -283,6 +303,26 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
+			false,
+			CollectionType.COLLECTION
+		);
+	
+		createRelationAttributes(
+			"Concert2Producer", 
+			false, 
+
+			"concerts", 
+			"Concert", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			true,
+			false,
+			CollectionType.SET,
+			"producer", 
+			"Producer", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			false,
 			false,
 			CollectionType.COLLECTION
 		);
@@ -469,6 +509,40 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"image",  
 					null,
 					"MediaContainer",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Producer_code() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Producer", 
+					"code",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Producer_name() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Producer", 
+					"name",  
+					null,
+					"java.lang.String",
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
@@ -727,11 +801,15 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 		single_setRelAttributeProperties_Song2Concert_source();
 	
+		single_setRelAttributeProperties_Concert2Producer_source();
+	
 		single_setRelAttributeProperties_Band2MusicType_target();
 	
 		single_setRelAttributeProperties_Product2Band_target();
 	
 		single_setRelAttributeProperties_Song2Concert_target();
+	
+		single_setRelAttributeProperties_Concert2Producer_target();
 	
 		connectRelation(
 			"Band2MusicType", 
@@ -772,6 +850,21 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			"concerts", 
 			"Concert", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			true,
+			false
+		);
+	
+		connectRelation(
+			"Concert2Producer", 
+			false, 
+			"concerts", 
+			"Concert", 
+			true,
+			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
+			"producer", 
+			"Producer", 
 			true,
 			de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG, 
 			true,
@@ -835,6 +928,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_Band_bandLeader();
 		
 			single_setAttributeProperties_Band_image();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
+					"Producer",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Producer_code();
+		
+			single_setAttributeProperties_Producer_name();
 		
 				{
 				Map customPropsMap = new HashMap();
@@ -1005,7 +1115,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"Concert", 
 								"venue",
-								false, 
+								true, 
 								null,
 								null,
 								null,
@@ -1093,7 +1203,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"Band", 
 								"code",
-								false, 
+								true, 
 								null,
 								null,
 								null,
@@ -1215,6 +1325,50 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							);
 						}
 					
+						public void single_setAttributeProperties_Producer_code() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Producer", 
+								"code",
+								true, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Producer_name() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Producer", 
+								"name",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
 						public void single_setAttributeProperties_BandLeader_code() throws JaloBusinessException
 						{
 							
@@ -1225,7 +1379,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"BandLeader", 
 								"code",
-								false, 
+								true, 
 								null,
 								null,
 								null,
@@ -1291,7 +1445,7 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"Song", 
 								"code",
-								false, 
+								true, 
 								null,
 								null,
 								null,
@@ -1615,6 +1769,48 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 									setAttributeProperties(
 										"Song", 
 										"concerts",
+										false, 
+										null,
+										null,
+										null,
+										true,
+										false,
+										null,
+										customPropsMap,
+										null
+									);
+								}
+							
+								public void single_setRelAttributeProperties_Concert2Producer_source() throws JaloBusinessException
+								{
+									
+									Map customPropsMap = new HashMap();
+									
+
+									setAttributeProperties(
+										"Producer", 
+										"concerts",
+										false, 
+										null,
+										null,
+										null,
+										true,
+										false,
+										null,
+										customPropsMap,
+										null
+									);
+								}
+							
+								public void single_setRelAttributeProperties_Concert2Producer_target() throws JaloBusinessException
+								{
+									
+									Map customPropsMap = new HashMap();
+									
+
+									setAttributeProperties(
+										"Concert", 
+										"producer",
 										false, 
 										null,
 										null,

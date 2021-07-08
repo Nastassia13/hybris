@@ -141,4 +141,14 @@
     <bean id="generateNewFieldJob" class="concerttours.jobs.GenerateNewFieldJob" parent="abstractJobPerformable">
         <property name="dateTokenService" ref="dateTokenService"/>
     </bean>
+
+    <bean id="concertDao" class="concerttours.daos.impl.DefaultConcertDao" parent="abstractItemDao"/>
+
+    <bean id="concertService" class="concerttours.service.impl.DefaultConcertService">
+        <property name="concertDao" ref="concertDao"/>
+    </bean>
+
+    <bean id="concertFacade" class="concerttours.facades.impl.DefaultConcertFacade">
+        <property name="concertService" ref="concertService"/>
+    </bean>
 </beans>

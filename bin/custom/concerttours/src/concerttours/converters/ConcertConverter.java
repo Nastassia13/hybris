@@ -1,6 +1,6 @@
 package concerttours.converters;
 
-import concerttours.data.ConcertSummaryData;
+import concerttours.data.ConcertData;
 import concerttours.enums.ConcertType;
 import concerttours.model.ConcertModel;
 import de.hybris.platform.servicelayer.dto.converter.ConversionException;
@@ -8,18 +8,18 @@ import de.hybris.platform.servicelayer.dto.converter.Converter;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ConcertConverter implements Converter<ConcertModel, ConcertSummaryData> {
+public class ConcertConverter implements Converter<ConcertModel, ConcertData> {
     @Override
-    public ConcertSummaryData convert(ConcertModel concertModel) throws ConversionException {
-        return convert(concertModel, new ConcertSummaryData());
+    public ConcertData convert(ConcertModel concertModel) throws ConversionException {
+        return convert(concertModel, new ConcertData());
     }
 
     @Override
-    public ConcertSummaryData convert(ConcertModel concertModel, ConcertSummaryData concertSummaryData) throws ConversionException {
-        concertSummaryData.setId(concertModel.getCode());
-        concertSummaryData.setDate(concertModel.getDate());
-        concertSummaryData.setVenue(concertModel.getVenue());
-        concertSummaryData.setType(concertModel.getConcertType() == ConcertType.OPENAIR ? "Outdoors" : "Indoors");
-        return concertSummaryData;
+    public ConcertData convert(ConcertModel concertModel, ConcertData concertData) throws ConversionException {
+        concertData.setId(concertModel.getCode());
+        concertData.setDate(concertModel.getDate());
+        concertData.setVenue(concertModel.getVenue());
+        concertData.setType(concertModel.getConcertType() == ConcertType.OPENAIR ? "Outdoors" : "Indoors");
+        return concertData;
     }
 }

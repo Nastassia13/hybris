@@ -1,6 +1,6 @@
 package concerttours.facades.impl;
 
-import concerttours.data.ConcertSummaryData;
+import concerttours.data.ConcertData;
 import concerttours.data.TourData;
 import concerttours.facades.TourFacade;
 import concerttours.model.ConcertModel;
@@ -17,7 +17,7 @@ import java.util.List;
 public class DefaultTourFacade implements TourFacade {
     private ProductService productService;
     @Resource
-    private Converter<ConcertModel, ConcertSummaryData> concertConverter;
+    private Converter<ConcertModel, ConcertData> concertConverter;
     @Resource
     private Converter<ProductModel, TourData> tourConverter;
 
@@ -31,17 +31,17 @@ public class DefaultTourFacade implements TourFacade {
             return null;
         }
         TourData tourData = tourConverter.convert(product);
-        tourData.setConcerts(findConcertSummaryData(product));
+        tourData.setConcerts(findConcertData(product));
         return tourData;
     }
 
-    private List<ConcertSummaryData> findConcertSummaryData(ProductModel product) {
-        List<ConcertSummaryData> concerts = new ArrayList<>();
+    private List<ConcertData> findConcertData(ProductModel product) {
+        List<ConcertData> concerts = new ArrayList<>();
         if (product.getVariants() != null) {
             for (VariantProductModel variant : product.getVariants()) {
                 if (variant instanceof ConcertModel) {
-                    ConcertSummaryData summary = concertConverter.convert((ConcertModel) variant);
-                    concerts.add(summary);
+                    ConcertData concertData = concertConverter.convert((ConcertModel) variant);
+                    concerts.add(concertData);
                 }
             }
         }

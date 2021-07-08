@@ -1,0 +1,52 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Concerts</title>
+</head>
+<body>
+<h1>Concerts</h1>
+<table>
+    <thead>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Venue
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Type
+        </th>
+        <th>
+            Producer
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="concert" items="${concerts}">
+        <tr>
+            <td>
+                    ${concert.id}
+            </td>
+            <td>
+                    ${concert.venue}
+            </td>
+            <td>
+                    ${concert.date}
+            </td>
+            <td>
+                    ${concert.type}
+            </td>
+            <td>
+                    ${concert.producer.name}
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+</body>
+</html>
