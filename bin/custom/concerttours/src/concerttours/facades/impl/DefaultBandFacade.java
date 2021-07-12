@@ -85,10 +85,12 @@ public class DefaultBandFacade implements BandFacade {
         this.bandService = bandService;
     }
 
+    @Required
     public void setMediaService(MediaService mediaService) {
         this.mediaService = mediaService;
     }
 
+    @Required
     public void setConfigService(ConfigurationService configService) {
         this.configService = configService;
     }

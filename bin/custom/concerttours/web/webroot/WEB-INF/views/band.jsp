@@ -2,10 +2,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Band</title>
+    <title>Band Details</title>
 </head>
 <body>
-<h1>Band</h1>
+<h1>Band Details</h1>
+<p>
+    <img src="${band.imageURL}"/>
+</p>
 Id: ${band.id} <br>
 Name: ${band.name} <br>
 Description: ${band.description} <br>
@@ -42,5 +45,6 @@ Tours:
     </c:forEach>
     </tbody>
 </table>
+<a href="../bands">Back to Band List</a>
 </body>
 </html>

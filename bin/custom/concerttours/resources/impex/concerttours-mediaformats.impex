@@ -1,0 +1,3 @@
+INSERT_UPDATE MediaFormat;qualifier[unique=true];name
+;bandDetail;Band Detail Format
+;bandList;Band List Format
