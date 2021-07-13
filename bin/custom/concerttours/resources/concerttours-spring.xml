@@ -151,4 +151,36 @@
     <bean id="concertFacade" class="concerttours.facades.impl.DefaultConcertFacade">
         <property name="concertService" ref="concertService"/>
     </bean>
+
+    <bean id="newsDao" class="concerttours.daos.impl.DefaultNewsDao" parent="abstractItemDao"/>
+
+    <bean id="newsService" class="concerttours.service.impl.DefaultNewsService">
+        <property name="newsDao" ref="newsDao"/>
+    </bean>
+
+    <bean id="newsFacade" class="concerttours.facades.impl.DefaultNewsFacade">
+        <property name="newsService" ref="newsService"/>
+    </bean>
+
+    <bean id="newsCatalogAwareInterceptor"
+          class="concerttours.interceptors.NewsCatalogAwareInterceptor">
+        <property name="keyGenerator" ref="newsIdGenerator"/>
+        <property name="defaultCatalog" value="Default"/>
+        <property name="defaultCatalogVersion" value="Online"/>
+        <property name="catalogVersionService" ref="catalogVersionService"/>
+    </bean>
+
+    <bean id="newsValidateInterceptorMapping"
+          class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="newsCatalogAwareInterceptor"/>
+        <property name="typeCode" value="News"/>
+    </bean>
+
+    <bean id="newsIdGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator"
+          init-method="init">
+        <property name="key" value="news_id"/>
+        <property name="digits" value="8"/>
+        <property name="start" value="00000000"/>
+        <property name="numeric" value="true"/>
+    </bean>
 </beans>
