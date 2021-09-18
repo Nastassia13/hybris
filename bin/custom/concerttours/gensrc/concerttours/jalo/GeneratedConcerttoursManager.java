@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 25.06.2021 2:26:32                          ---
+ * --- Generated at 08.07.2021 17:02:55                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -10,6 +10,10 @@ import concerttours.constants.ConcerttoursConstants;
 import concerttours.jalo.Band;
 import concerttours.jalo.BandLeader;
 import concerttours.jalo.Concert;
+import concerttours.jalo.DateToken;
+import concerttours.jalo.News;
+import concerttours.jalo.NotLoremIpsumConstraint;
+import concerttours.jalo.Producer;
 import concerttours.jalo.Song;
 import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
@@ -352,6 +356,110 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	public Concert createConcert(final Map attributeValues)
 	{
 		return createConcert( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public DateToken createDateToken(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.DATETOKEN );
+			return (DateToken)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating DateToken : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public DateToken createDateToken(final Map attributeValues)
+	{
+		return createDateToken( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public News createNews(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.NEWS );
+			return (News)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating News : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public News createNews(final Map attributeValues)
+	{
+		return createNews( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.NOTLOREMIPSUMCONSTRAINT );
+			return (NotLoremIpsumConstraint)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating NotLoremIpsumConstraint : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public NotLoremIpsumConstraint createNotLoremIpsumConstraint(final Map attributeValues)
+	{
+		return createNotLoremIpsumConstraint( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public Producer createProducer(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( ConcerttoursConstants.TC.PRODUCER );
+			return (Producer)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating Producer : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public Producer createProducer(final Map attributeValues)
+	{
+		return createProducer( getSession().getSessionContext(), attributeValues );
 	}
 	
 	public Song createSong(final SessionContext ctx, final Map attributeValues)

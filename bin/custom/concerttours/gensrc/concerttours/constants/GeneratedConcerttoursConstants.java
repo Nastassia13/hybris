@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 25.06.2021 2:26:32                          ---
+ * --- Generated at 08.07.2021 17:02:55                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.constants;
@@ -20,7 +20,11 @@ public class GeneratedConcerttoursConstants
 		public static final String BANDLEADER = "BandLeader".intern();
 		public static final String CONCERT = "Concert".intern();
 		public static final String CONCERTTYPE = "ConcertType".intern();
+		public static final String DATETOKEN = "DateToken".intern();
 		public static final String MUSICTYPE = "MusicType".intern();
+		public static final String NEWS = "News".intern();
+		public static final String NOTLOREMIPSUMCONSTRAINT = "NotLoremIpsumConstraint".intern();
+		public static final String PRODUCER = "Producer".intern();
 		public static final String SONG = "Song".intern();
 	}
 	public static class Attributes
@@ -50,6 +54,7 @@ public class GeneratedConcerttoursConstants
 	public static class Relations
 	{
 		public static final String BAND2MUSICTYPE = "Band2MusicType".intern();
+		public static final String CONCERT2PRODUCER = "Concert2Producer".intern();
 		public static final String PRODUCT2BAND = "Product2Band".intern();
 		public static final String SONG2CONCERT = "Song2Concert".intern();
 	}

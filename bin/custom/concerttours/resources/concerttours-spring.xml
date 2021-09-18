@@ -12,10 +12,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/aop
-           http://www.springframework.org/schema/aop/spring-aop.xsd">
+           http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--
     The hybris platform provides one single Spring application context for beans located at the jalo layer.
@@ -78,6 +79,8 @@
            <aop:pointcut id="profiledMethods" expression="execution(* *(..))" />
       -->
 
+    <context:component-scan base-package="concerttours"/>
+
     <bean id="concerttoursSystemSetup" class="concerttours.setup.ConcerttoursSystemSetup">
         <!-- constructor arg injection example -->
         <constructor-arg ref="concerttoursService"/>
@@ -95,5 +98,89 @@
 
     <bean id="concerttoursCustomSetup" class="concerttours.setup.ConcerttoursCustomSetup">
         <property name="importService" ref="importService"/>
+    </bean>
+
+    <bean id="bandDao" class="concerttours.daos.impl.DefaultBandDao" parent="abstractItemDao"/>
+
+    <bean id="bandService" class="concerttours.service.impl.DefaultBandService">
+        <property name="bandDao" ref="bandDao"/>
+    </bean>
+
+    <bean id="bandFacade" class="concerttours.facades.impl.DefaultBandFacade">
+        <property name="bandService" ref="bandService"/>
+        <property name="mediaService" ref="mediaService"/>
+        <property name="configService" ref="configurationService"/>
+    </bean>
+
+    <bean id="tourFacade" class="concerttours.facades.impl.DefaultTourFacade">
+        <property name="productService" ref="productService"/>
+    </bean>
+
+    <bean id="concerttourEventListener" class="concerttours.events.NewBandEventListener" parent="abstractEventListener">
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+    <bean id="bandAlbumSalesInterceptor" class="concerttours.interceptors.BandAlbumSalesInterceptor"/>
+
+    <bean id="bandInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="bandAlbumSalesInterceptor"/>
+        <property name="typeCode" value="Band"/>
+    </bean>
+
+    <bean id="bandAlbumSalesEventListener" class="concerttours.events.BandAlbumSalesEventListener"
+          parent="abstractEventListener">
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+    <bean id="dateTokenDao" class="concerttours.daos.impl.DefaultDateTokenDao" parent="abstractItemDao"/>
+
+    <bean id="dateTokenService" class="concerttours.service.impl.DefaultDateTokenService">
+        <property name="dateTokenDao" ref="dateTokenDao"/>
+    </bean>
+
+    <bean id="generateNewFieldJob" class="concerttours.jobs.GenerateNewFieldJob" parent="abstractJobPerformable">
+        <property name="dateTokenService" ref="dateTokenService"/>
+    </bean>
+
+    <bean id="concertDao" class="concerttours.daos.impl.DefaultConcertDao" parent="abstractItemDao"/>
+
+    <bean id="concertService" class="concerttours.service.impl.DefaultConcertService">
+        <property name="concertDao" ref="concertDao"/>
+    </bean>
+
+    <bean id="concertFacade" class="concerttours.facades.impl.DefaultConcertFacade">
+        <property name="concertService" ref="concertService"/>
+    </bean>
+
+    <bean id="newsDao" class="concerttours.daos.impl.DefaultNewsDao" parent="abstractItemDao"/>
+
+    <bean id="newsService" class="concerttours.service.impl.DefaultNewsService">
+        <property name="newsDao" ref="newsDao"/>
+    </bean>
+
+    <bean id="newsFacade" class="concerttours.facades.impl.DefaultNewsFacade">
+        <property name="newsService" ref="newsService"/>
+    </bean>
+
+    <bean id="newsCatalogAwareInterceptor"
+          class="concerttours.interceptors.NewsCatalogAwareInterceptor">
+        <property name="keyGenerator" ref="newsIdGenerator"/>
+        <property name="defaultCatalog" value="Default"/>
+        <property name="defaultCatalogVersion" value="Online"/>
+        <property name="catalogVersionService" ref="catalogVersionService"/>
+    </bean>
+
+    <bean id="newsValidateInterceptorMapping"
+          class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="newsCatalogAwareInterceptor"/>
+        <property name="typeCode" value="News"/>
+    </bean>
+
+    <bean id="newsIdGenerator" class="de.hybris.platform.servicelayer.keygenerator.impl.PersistentKeyGenerator"
+          init-method="init">
+        <property name="key" value="news_id"/>
+        <property name="digits" value="8"/>
+        <property name="start" value="00000000"/>
+        <property name="numeric" value="true"/>
     </bean>
 </beans>

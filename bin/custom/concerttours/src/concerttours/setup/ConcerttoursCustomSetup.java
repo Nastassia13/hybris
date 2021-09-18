@@ -34,10 +34,14 @@ public class ConcerttoursCustomSetup {
     @SystemSetup(type = SystemSetup.Type.PROJECT)
     public boolean addMyProjectData() {
         LOG.info("Starting custom project data loading for the Concerttours extension");
+        impexImport("/impex/concerttours-mediaformats.impex");
         impexImport("/impex/concerttours-bands.impex");
+        impexImport("/impex/concerttours-tokens.impex");
         impexImport("/impex/concerttours-bands-en.impex");
         impexImport("/impex/concerttours-bands-de.impex");
         impexImport("/impex/concerttours-data.impex");
+        impexImport("/impex/concerttours-scripts.impex");
+        impexImport("/impex/concerttours-producers.impex");
         LOG.info("Custom project data loading for the Concerttours extension completed.");
         return true;
     }

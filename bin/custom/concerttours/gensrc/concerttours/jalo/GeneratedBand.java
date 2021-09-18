@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 25.06.2021 2:26:32                          ---
+ * --- Generated at 08.07.2021 17:02:55                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
@@ -17,6 +17,7 @@ import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.c2l.C2LManager;
 import de.hybris.platform.jalo.c2l.Language;
 import de.hybris.platform.jalo.enumeration.EnumerationValue;
+import de.hybris.platform.jalo.media.MediaContainer;
 import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.jalo.type.ComposedType;
@@ -47,6 +48,8 @@ public abstract class GeneratedBand extends GenericItem
 	public static final String ALBUMSALES = "albumSales";
 	/** Qualifier of the <code>Band.bandLeader</code> attribute **/
 	public static final String BANDLEADER = "bandLeader";
+	/** Qualifier of the <code>Band.image</code> attribute **/
+	public static final String IMAGE = "image";
 	/** Qualifier of the <code>Band.types</code> attribute **/
 	public static final String TYPES = "types";
 	/** Qualifier of the <code>Band.tours</code> attribute **/
@@ -77,6 +80,7 @@ public abstract class GeneratedBand extends GenericItem
 		tmp.put(HISTORY, AttributeMode.INITIAL);
 		tmp.put(ALBUMSALES, AttributeMode.INITIAL);
 		tmp.put(BANDLEADER, AttributeMode.INITIAL);
+		tmp.put(IMAGE, AttributeMode.INITIAL);
 		tmp.put(TYPES, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
@@ -333,6 +337,42 @@ public abstract class GeneratedBand extends GenericItem
 	public void setAllHistory(final Map<Language,String> value)
 	{
 		setAllHistory( getSession().getSessionContext(), value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Band.image</code> attribute.
+	 * @return the image - picture of band in different formats
+	 */
+	public MediaContainer getImage(final SessionContext ctx)
+	{
+		return (MediaContainer)getProperty( ctx, IMAGE);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Band.image</code> attribute.
+	 * @return the image - picture of band in different formats
+	 */
+	public MediaContainer getImage()
+	{
+		return getImage( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Band.image</code> attribute. 
+	 * @param value the image - picture of band in different formats
+	 */
+	public void setImage(final SessionContext ctx, final MediaContainer value)
+	{
+		setProperty(ctx, IMAGE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Band.image</code> attribute. 
+	 * @param value the image - picture of band in different formats
+	 */
+	public void setImage(final MediaContainer value)
+	{
+		setImage( getSession().getSessionContext(), value );
 	}
 	
 	@Override

@@ -1,19 +1,23 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 25.06.2021 2:26:32                          ---
+ * --- Generated at 08.07.2021 17:02:55                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
 
 import concerttours.constants.ConcerttoursConstants;
+import concerttours.jalo.Producer;
 import concerttours.jalo.Song;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
+import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.enumeration.EnumerationValue;
+import de.hybris.platform.jalo.type.CollectionType;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.TypeManager;
+import de.hybris.platform.util.BidirectionalOneToManyHandler;
 import de.hybris.platform.util.Utilities;
 import de.hybris.platform.variants.jalo.VariantProduct;
 import java.util.Collections;
@@ -43,6 +47,20 @@ public abstract class GeneratedConcert extends VariantProduct
 	protected static String SONG2CONCERT_TGT_ORDERED = "relation.Song2Concert.target.ordered";
 	/** Relation disable markmodifed parameter constants for Song2Concert from ((concerttours))*/
 	protected static String SONG2CONCERT_MARKMODIFIED = "relation.Song2Concert.markmodified";
+	/** Qualifier of the <code>Concert.producer</code> attribute **/
+	public static final String PRODUCER = "producer";
+	/**
+	* {@link BidirectionalOneToManyHandler} for handling 1:n PRODUCER's relation attributes from 'one' side.
+	**/
+	protected static final BidirectionalOneToManyHandler<GeneratedConcert> PRODUCERHANDLER = new BidirectionalOneToManyHandler<GeneratedConcert>(
+	ConcerttoursConstants.TC.CONCERT,
+	false,
+	"producer",
+	null,
+	false,
+	true,
+	CollectionType.SET
+	);
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
@@ -50,6 +68,7 @@ public abstract class GeneratedConcert extends VariantProduct
 		tmp.put(VENUE, AttributeMode.INITIAL);
 		tmp.put(DATE, AttributeMode.INITIAL);
 		tmp.put(CONCERTTYPE, AttributeMode.INITIAL);
+		tmp.put(PRODUCER, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -92,6 +111,13 @@ public abstract class GeneratedConcert extends VariantProduct
 	public void setConcertType(final EnumerationValue value)
 	{
 		setConcertType( getSession().getSessionContext(), value );
+	}
+	
+	@Override
+	protected Item createItem(final SessionContext ctx, final ComposedType type, final ItemAttributeMap allAttributes) throws JaloBusinessException
+	{
+		PRODUCERHANDLER.newInstance(ctx, allAttributes);
+		return super.createItem( ctx, type, allAttributes );
 	}
 	
 	/**
@@ -139,6 +165,42 @@ public abstract class GeneratedConcert extends VariantProduct
 			return Utilities.getMarkModifiedOverride(SONG2CONCERT_MARKMODIFIED);
 		}
 		return true;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Concert.producer</code> attribute.
+	 * @return the producer
+	 */
+	public Producer getProducer(final SessionContext ctx)
+	{
+		return (Producer)getProperty( ctx, PRODUCER);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Concert.producer</code> attribute.
+	 * @return the producer
+	 */
+	public Producer getProducer()
+	{
+		return getProducer( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Concert.producer</code> attribute. 
+	 * @param value the producer
+	 */
+	public void setProducer(final SessionContext ctx, final Producer value)
+	{
+		PRODUCERHANDLER.addValue( ctx, value, this  );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Concert.producer</code> attribute. 
+	 * @param value the producer
+	 */
+	public void setProducer(final Producer value)
+	{
+		setProducer( getSession().getSessionContext(), value );
 	}
 	
 	/**
